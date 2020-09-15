@@ -13,10 +13,8 @@
  
  
 Aww Geez Man: Interdimensional Mortys.
-
 One of Morty C137's favorite phrases is "Aww Geez Man". But, in dimension Z286, there
 exists a Morty who says everything backwards.
-
 */
 
 // Include the Morty header file
@@ -38,11 +36,33 @@ int main (int ac, char** av) {
 	}
 	
 	// Parse the command line arguments
-	
+	int start;
+	int stop;
+	int step;
+	std::string dimension;
+	start = atoi(*(av+1));
+	stop = atoi(*(av+2));
+	if(ac == 4){
+		step = 1;
+		dimension = *(av+3);
+	}
+	else if(ac == 5){
+		step = atoi(*(av+3));
+		dimension = *(av+4);
+	}
+	//std::cout << start << " - " << stop << " x " << step << " in " << dimension << std::endl;
 		
 	// Depending on the dimension of the arguments, call the appropriate Morty
 	// function
-	
+	if(dimension.compare("C137")==0){
+		C137::Morty(start, stop, step);
+	}
+	else if(dimension.compare("Z286")==0){
+		Z286::Morty(start, stop, step);
+	}
+	else{
+		std::cout << "ERROR: Unknown dimension!!";
+	}
 	
 	return 0;
 }

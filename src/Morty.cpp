@@ -13,7 +13,7 @@
 namespace interdimensional{
 	args parseArgs(int c, char** v){
 		args ret;
-		string dimen;
+		std::string dimen;
 		ret.start = atoi(*(v+1));
 		ret.stop = atoi(*(v+2));
 		if(c==4){
@@ -34,7 +34,7 @@ namespace interdimensional{
 		}else{
 			ret.dim=UNKNOWN;
 		}
-		return args;
+		return ret;
 	}
 }
 

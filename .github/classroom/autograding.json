@@ -1,0 +1,24 @@
+{
+  "tests": [
+    {
+      "name": "Output test",
+      "setup": "sudo -H pip3 install pytest && sudo apt-get --assume-yes install libboost-all-dev",
+      "run": "pytest",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    },
+    {
+      "name": "Functions test",
+      "setup": "",
+      "run": "cd Tester/testingBuild/Tester && ctest -V",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    }
+  ]
+}
